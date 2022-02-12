@@ -1,0 +1,17 @@
+*{
+  box-sizing: border-box;
+}
+
+body {
+  background-color: blanchedalmond;
+  padding: 10px;
+}
+
+.matrix-header h1 {
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  font-size: 120px;
+  letter-spacing: 5px;
+  margin: 0;
+  user-select: none;
+}
