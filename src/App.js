@@ -1,113 +1,271 @@
-import './App.css'
-import { Button } from '@mui/material'
-import { bgcolor, Box } from '@mui/system'
-import { useState } from 'react'
-import { TextField } from '@mui/material'
-import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward'
-import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward'
-import ArrowBackIcon from '@mui/icons-material/ArrowBack'
-import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
+import "./App.css";
+import { Button } from "@mui/material";
+import { Box } from "@mui/system";
+import { useState } from "react";
+import MatrixController from "./MatrixController";
+import Matrices from "./Matrices";
 
-
-const items = new Array(144).fill(null)
-const App = _ => {
+const App = () => {
   //red
-  const [team1, setTeam1] = useState([0, 0, 0, 0])
-  const [team2, setteam2] = useState([0, 0, 0, 0])
+  const [red1_1, setred1_1] = useState(0);
+  const [red1_2, setred1_2] = useState(0);
+  const [red1_3, setred1_3] = useState(0);
+  const [red1_4, setred1_4] = useState(0);
+
+  const [red2_1, setred2_1] = useState(0);
+  const [red2_2, setred2_2] = useState(0);
+  const [red2_3, setred2_3] = useState(0);
+  const [red2_4, setred2_4] = useState(0);
   //blue
-  const [team3, setteam3] = useState([0, 0, 0, 0])
-  const [team4, setteam4] = useState([0, 0, 0, 0])
+  const [blue1_1, setblue1_1] = useState(0);
+  const [blue1_2, setblue1_2] = useState(0);
+  const [blue1_3, setblue1_3] = useState(0);
+  const [blue1_4, setblue1_4] = useState(0);
+
+  const [blue2_1, setblue2_1] = useState(0);
+  const [blue2_2, setblue2_2] = useState(0);
+  const [blue2_3, setblue2_3] = useState(0);
+  const [blue2_4, setblue2_4] = useState(0);
   //green
-  const [team5, setteam5] = useState([0, 0, 0, 0])
-  const [team6, setteam6] = useState([0, 0, 0, 0])
+  const [green1_1, setgreen1_1] = useState(0);
+  const [green1_2, setgreen1_2] = useState(0);
+  const [green1_3, setgreen1_3] = useState(0);
+  const [green1_4, setgreen1_4] = useState(0);
+
+  const [green2_1, setgreen2_1] = useState(0);
+  const [green2_2, setgreen2_2] = useState(0);
+  const [green2_3, setgreen2_3] = useState(0);
+  const [green2_4, setgreen2_4] = useState(0);
   //yellow
-  const [team7, setteam7] = useState([0, 0, 0, 0])
-  const [team8, setteam8] = useState([0, 0, 0, 0])
+  const [yellow1_1, setyellow1_1] = useState(0);
+  const [yellow1_2, setyellow1_2] = useState(0);
+  const [yellow1_3, setyellow1_3] = useState(0);
+  const [yellow1_4, setyellow1_4] = useState(0);
 
-  const TeamsMatrices = _ => {
-    return (
-      <>
-        {/* Red Team 1 */}
-        
-      </>)
-  }
+  const [yellow2_1, setyellow2_1] = useState(0);
+  const [yellow2_2, setyellow2_2] = useState(0);
+  const [yellow2_3, setyellow2_3] = useState(0);
+  const [yellow2_4, setyellow2_4] = useState(0);
 
-  const MatrixController = _ => {
-    return (
-      <>
-      <Box className="controller-r1">
-        <Box className="controller-main" sx={{ display: 'grid', gridTemplateColumns: '50px 30px 30px 50px', gridTemplateRows: '50px 30px 30px 50px 50px',gap:'2px' }}>
+  const [maxZ, setMaxZ] = useState(9);
 
-          <Button sx={{ gridRow: '1 / 2', gridColumn: '2 / 4', padding: '0', width: '60px', minWidth: '60px', height: '50px' }}><ArrowUpwardIcon /></Button>
-          <Button sx={{ gridRow: '4 / 5', gridColumn: '2 / 4', padding: '0', width: '50px', minWidth: '60px', height: '50px' }}><ArrowDownwardIcon /></Button>
-          <Button sx={{ gridRow: '2 / 4', gridColumn: '1 / 2', padding: '0', width: '50px', minWidth: '50px', height: '60px' }}><ArrowBackIcon /></Button>
-          <Button sx={{ gridRow: '2 / 4', gridColumn: '4 / 5', padding: '0', width: '50px', minWidth: '50px', height: '60px' }}><ArrowForwardIcon /></Button>
-
-          <Box sx={{ gridRow: '2 / 3', gridColumn: '2 / 3', bgcolor: '#EB5757', display: 'block' }}>
-            <input type='text' id='red-1-1'
-              onChange={() => {
-                let currentState = team1
-                currentState[0] = document.querySelector('#red-1-1').value
-                setTeam1(currentState)
-                console.log(team1)
-              }}
-              style={{ width: '30px', height: '30px', backgroundColor: 'transparent', border: 'none', fontSize: '20px',outline:'none' }}></input>
-          </Box>
-          
-          <Box sx={{ gridRow: '2 / 3', gridColumn: '3 / 4', bgcolor: '#EB5757', display: 'block' }}>
-          <input type='text' id='red-1-2'
-              onChange={() => {
-                let currentState = team1
-                currentState[1] = document.querySelector('#red-1-2').value
-                setTeam1(currentState)
-                console.log(team1)
-              }}
-              style={{ width: '30px', height: '30px', backgroundColor: 'transparent', border: 'none', fontSize: '20px',outline:'none' }}></input>
-          </Box>
-          
-          <Box sx={{ gridRow: '3 / 4', gridColumn: '2 / 3', bgcolor: '#EB5757', display: 'block' }}>
-          <input type='text' id='red-2-1'
-              onChange={() => {
-                let currentState = team1
-                currentState[2] = document.querySelector('#red-2-1').value
-                setTeam1(currentState)
-                console.log(team1)
-              }}
-              style={{ width: '30px', height: '30px', backgroundColor: 'transparent', border: 'none', fontSize: '20px',outline:'none' }}></input>
-          </Box>
-          
-          <Box sx={{ gridRow: '3 / 4', gridColumn: '3 / 4', bgcolor: '#EB5757', display: 'block' }}>
-          <input type='text' id='red-2-2'
-              onChange={() => {
-                let currentState = team1
-                currentState[3] = document.querySelector('#red-2-2').value
-                setTeam1(currentState)
-                console.log(team1)
-              }}
-              style={{ width: '30px', height: '30px', backgroundColor: 'transparent', border: 'none', fontSize: '20px',outline:'none' }}></input>
-          </Box>
-          <h2 style={{ gridRow: '5 / 6', gridColumn: '1 / 5',margin:'auto'}}>Team Red 1</h2>
-        </Box>
-      </Box>
-
-      
-      </>
-    )
-  }
+  const matrices = [
+    {
+      color: "red-1",
+      id: "matrix-red-1-1",
+      colorId: "red",
+      top: 0,
+      left: 0,
+      state_1: red1_1,
+      state_2: red1_2,
+      state_3: red1_3,
+      state_4: red1_4,
+      setState_1: setred1_1,
+      setState_2: setred1_2,
+      setState_3: setred1_3,
+      setState_4: setred1_4,
+      z: 1,
+    },
+    {
+      color: "blue-1",
+      id: "matrix-blue-1-1",
+      colorId: "blue",
+      top: 750,
+      left: 750,
+      state_1: blue1_1,
+      state_2: blue1_2,
+      state_3: blue1_3,
+      state_4: blue1_4,
+      setState_1: setblue1_1,
+      setState_2: setblue1_2,
+      setState_3: setblue1_3,
+      setState_4: setblue1_4,
+      z: 2,
+    },
+    {
+      color: "red-1",
+      id: "matrix-red-1-1",
+      colorId: "red",
+      top: 750,
+      left: 0,
+      state_1: red1_1,
+      state_2: red1_2,
+      state_3: red1_3,
+      state_4: red1_4,
+      setState_1: setred1_1,
+      setState_2: setred1_2,
+      setState_3: setred1_3,
+      setState_4: setred1_4,
+      z: 3,
+    },
+    {
+      color: "blue-1",
+      id: "matrix-blue-1-1",
+      colorId: "blue",
+      top: 750,
+      left: 750,
+      state_1: blue1_1,
+      state_2: blue1_2,
+      state_3: blue1_3,
+      state_4: blue1_4,
+      setState_1: setblue1_1,
+      setState_2: setblue1_2,
+      setState_3: setblue1_3,
+      setState_4: setblue1_4,
+      z: 2,
+    },
+    {
+      color: "blue-1",
+      id: "matrix-blue-1-1",
+      colorId: "blue",
+      top: 750,
+      left: 750,
+      state_1: blue1_1,
+      state_2: blue1_2,
+      state_3: blue1_3,
+      state_4: blue1_4,
+      setState_1: setblue1_1,
+      setState_2: setblue1_2,
+      setState_3: setblue1_3,
+      setState_4: setblue1_4,
+      z: 2,
+    },
+    {
+      color: "red-1",
+      id: "matrix-red-1-1",
+      colorId: "red",
+      top: 750,
+      left: 0,
+      state_1: red1_1,
+      state_2: red1_2,
+      state_3: red1_3,
+      state_4: red1_4,
+      setState_1: setred1_1,
+      setState_2: setred1_2,
+      setState_3: setred1_3,
+      setState_4: setred1_4,
+      z: 3,
+    },
+    {
+      color: "blue-1",
+      id: "matrix-blue-1-1",
+      colorId: "blue",
+      top: 750,
+      left: 750,
+      state_1: blue1_1,
+      state_2: blue1_2,
+      state_3: blue1_3,
+      state_4: blue1_4,
+      setState_1: setblue1_1,
+      setState_2: setblue1_2,
+      setState_3: setblue1_3,
+      setState_4: setblue1_4,
+      z: 2,
+    },
+    {
+      color: "blue-1",
+      id: "matrix-blue-1-1",
+      colorId: "blue",
+      top: 750,
+      left: 750,
+      state_1: blue1_1,
+      state_2: blue1_2,
+      state_3: blue1_3,
+      state_4: blue1_4,
+      setState_1: setblue1_1,
+      setState_2: setblue1_2,
+      setState_3: setblue1_3,
+      setState_4: setblue1_4,
+      z: 2,
+    },
+  ];
 
   return (
-    <Box className='container' sx={{ display: 'flex', alignItems: 'center' }}>
-      <Box className="matrix-header">
-        <h1>MATRIX 2022</h1>
-      </Box>
-      <Box sx={{ display: 'grid', gridTemplateRows: 'repeat(12, 75px)', gridTemplateColumns: 'repeat(12,75px)', position: 'relative', width: 'max-content' }}>
-        {items.map((item, index) => <Box sx={{ border: 1 }} key={index} />)}
+    <>
+      <Box sx={{ display: "flex", alignItems: "center", gap: "4em" }}>
+        <Box className="matrix-header">
+          <h1>MATRIX 2022</h1>
+        </Box>
+        <Box
+          sx={{
+            display: "grid",
+            gridTemplateRows: "repeat(12, 75px)",
+            gridTemplateColumns: "repeat(12,75px)",
+            position: "relative",
+            width: "max-content",
+            border: "1px solid #ececec",
+            overflow: "hidden",
+          }}
+        >
+          {new Array(144).fill(null).map((item, index) => (
+            <Box sx={{ border: "1px solid #ececec" }} key={index} />
+          ))}
 
-        
-      </Box>
-      <MatrixController />
-    </Box>
-  )
-}
+          {matrices.map(
+            ({
+              id,
+              top,
+              left,
+              right,
+              colorId,
+              state_1,
+              state_2,
+              state_3,
+              state_4,
+              z,
+            }) => (
+              <Matrices
+                id={id}
+                top={top}
+                left={left}
+                colorId={colorId}
+                state_1={state_1}
+                state_2={state_2}
+                state_3={state_3}
+                state_4={state_4}
+                z={z}
+              />
+            )
+          )}
+        </Box>
 
-export default App
+        <Box sx={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr" }}>
+          {matrices.map(
+            ({
+              color,
+              colorId,
+              id,
+              state_1,
+              state_2,
+              state_3,
+              state_4,
+              setState_1,
+              setState_2,
+              setState_3,
+              setState_4,
+              z,
+            }) => (
+              <MatrixController
+                color={color}
+                colorId={colorId}
+                idOfMatrix={id}
+                state_1={state_1}
+                state_2={state_2}
+                state_3={state_3}
+                state_4={state_4}
+                setState_1={setState_1}
+                setState_2={setState_2}
+                setState_3={setState_3}
+                setState_4={setState_4}
+                z={maxZ}
+                setZ={setMaxZ}
+              />
+            )
+          )}
+        </Box>
+      </Box>
+    </>
+  );
+};
+
+export default App;

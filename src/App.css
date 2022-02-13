@@ -1,10 +1,11 @@
-*{
+* {
   box-sizing: border-box;
 }
 
 body {
-  background-color: blanchedalmond;
+  background-color: #212121;
   padding: 10px;
+  font-family: "Inter";
 }
 
 .matrix-header h1 {
@@ -14,4 +15,5 @@ body {
   letter-spacing: 5px;
   margin: 0;
   user-select: none;
+  color: #ececec;
 }
