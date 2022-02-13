@@ -48,12 +48,16 @@ const App = () => {
   const [yellow2_4, setyellow2_4] = useState(0);
 
   const [maxZ, setMaxZ] = useState(9);
+  const red = "#F05B5B",
+    blue = "#51B8F2",
+    green = "#6FCF97",
+    yellow = "#F2C94C";
 
   const matrices = [
     {
       color: "red-1",
       id: "matrix-red-1-1",
-      colorId: "red",
+      colorId: "#F05B5B",
       top: 0,
       left: 0,
       state_1: red1_1,
@@ -69,7 +73,7 @@ const App = () => {
     {
       color: "blue-1",
       id: "matrix-blue-1-1",
-      colorId: "blue",
+      colorId: "#51B8F2",
       top: 750,
       left: 750,
       state_1: blue1_1,
@@ -85,7 +89,7 @@ const App = () => {
     {
       color: "red-1",
       id: "matrix-red-1-1",
-      colorId: "red",
+      colorId: "#F05B5B",
       top: 750,
       left: 0,
       state_1: red1_1,
@@ -101,7 +105,7 @@ const App = () => {
     {
       color: "blue-1",
       id: "matrix-blue-1-1",
-      colorId: "blue",
+      colorId: "#51B8F2",
       top: 750,
       left: 750,
       state_1: blue1_1,
@@ -193,12 +197,12 @@ const App = () => {
             gridTemplateColumns: "repeat(12,75px)",
             position: "relative",
             width: "max-content",
-            border: "1px solid #ececec",
+            border: "1px solid #999999",
             overflow: "hidden",
           }}
         >
           {new Array(144).fill(null).map((item, index) => (
-            <Box sx={{ border: "1px solid #ececec" }} key={index} />
+            <Box sx={{ border: "1px solid #999999" }} key={index} />
           ))}
 
           {matrices.map(

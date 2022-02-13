@@ -30,6 +30,7 @@ export default function Matrices({
         position: "absolute",
         top: `${top}px`,
         left: `${left}px`,
+        transition: `all 200ms`,
       }}
     >
       <Box sx={css}>{state_1}</Box>
